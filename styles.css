@@ -9,7 +9,8 @@
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    height: 100vh;
+    padding-top: 0;
+    height: 300vh;
 
 }
 
@@ -22,9 +23,13 @@
 #backdrop {
     background-color: transparent;
     z-index: 10;
-    background: rgb(38,139,210, 0.9);
-    
+    background: rgb(38,139,210, 0.7);
+    padding-top: 1vh;
+    padding-bottom: 1rem;
     color: white;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    height: 100vh;
 }
 
 #text {
@@ -32,6 +37,4 @@
     z-index: 50;
     opacity: 1;
     color: white;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
 }
