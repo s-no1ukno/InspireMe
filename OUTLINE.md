@@ -4,8 +4,12 @@
 
 - [Quotes API](https://quotes.rest/)
 
-## Goals
+## What It Is
 
+I want to build a small front end app that will contact the Quotes API for a random positive and inspirational quote and display it on the page.  I need to do this to boost my understanding of API calls, as well as do something nice for my wife, who would love to be able to look at a personalized app to feel a little better during the day.
+
+## Goals
+---
 - [ ] 2 pages
   - Landing page
   - App Page
@@ -17,6 +21,8 @@
 ### Landing Page
 
 - [ ] Landing Page has a pretty random peaceful image upon startup
+
+#### Stretch Goal
 - [ ] Has a spot for a message from other party of pair
   - Kinda want this to be update-able from other party to myself, and from myself to other party
   - cute little note upon startup
