@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.jumbotron {
+    background-image: url(./landing-bg2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+
+}
+
+#landing-header {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+
+#backdrop {
+    background-color: transparent;
+    z-index: 10;
+    background: rgb(38,139,210, 0.9);
+    
+    color: white;
+}
+
+#text {
+    background: black;
+    z-index: 50;
+    opacity: 1;
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
