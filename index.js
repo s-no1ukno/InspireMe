@@ -15,13 +15,14 @@ const funnyButton = document.querySelector('.btn-funny')
 const lifeButton = document.querySelector('.btn-life')
 const loveButton = document.querySelector('.btn-love')
 const cardElement = document.querySelector('.card')
+const loader = document.querySelector('.loader')
 
 let authorName
 let quoteImage
 let quote
 
 cardElement.style.display = 'none'
-
+loader.style.display = 'none'
 
 async function getInspireQuote() {
   let res = await fetch(API_URL)
@@ -35,13 +36,6 @@ async function getInspireQuote() {
   authorNameElement.textContent = authorName
   imageElement.src = quoteImage
   quoteElement.textContent = quote
-
-
-
-  console.log('inspire', json);
-  console.log('content', authorNameElement.textContent);
-
-
 }
 
 async function getFunnyQuote() {
@@ -55,9 +49,6 @@ async function getFunnyQuote() {
   authorNameElement.textContent = funnyAuthorName
   imageElement.src = funnyQuoteImage
   quoteElement.textContent = funnyQuote
-
-  console.log('funny', funnyJson);
-  console.log('content', authorNameElement.textContent);
 }
 
 async function getLifeQuote() {
@@ -93,26 +84,33 @@ async function getLoveQuote() {
 
 
 inspireButton.addEventListener('click', (e) => {
-  cardElement.style.display = ''
+  loader.style.display = ''
   e.preventDefault()
   getInspireQuote();
+  loader.style.display = 'none'
+  cardElement.style.display = ''
 })
-console.log('button', inspireButton);
 
 funnyButton.addEventListener('click', (e) => {
-  cardElement.style.display = ''
+  loader.style.display = ''
   e.preventDefault()
   getFunnyQuote()
+  loader.style.display = 'none'
+  cardElement.style.display = ''
 })
 
 loveButton.addEventListener('click', (e) => {
-  cardElement.style.display = ''
+  loader.style.display = ''
   e.preventDefault()
   getLoveQuote()
+  loader.style.display = 'none'
+  cardElement.style.display = ''
 })
 
 lifeButton.addEventListener('click', (e) => {
-  cardElement.style.display = ''
+  loader.style.display = ''
   e.preventDefault()
   getLifeQuote()
+  loader.style.display = 'none'
+  cardElement.style.display = ''
 })
