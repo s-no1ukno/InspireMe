@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.jumbotron {
+    background-image: url(./assets/landing-bg2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 0;
+    height: 300vh;
+
+}
+
+#landing-header {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+
+#backdrop {
+    background: rgb(38, 139, 210, 0.7);
+    padding-top: 1vh;
+    padding-bottom: 1rem;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    height: 100vh;
+}
+
+#card {
+    z-index: 50;
+}
+
+#text {
+    background: black;
+    opacity: 1;
+    color: white;
+}
