@@ -46,10 +46,16 @@
                         <button type="submit" class="btn-lg btn-primary">Send It!</button>
                     </form>
                 </div>
+                <div class="alert alert-dismissible alert-light">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but
+                    it's not super important.
+                </div>
                 <div class="card text-white bg-danger mb-3" id="note-card">
                     <div class="card-header">Latest Love Note</div>
                     <div class="card-body">
                         <p class="card-text"></p>
+                        <p class="card-text text-muted" id="card-date"></p>
                     </div>
                 </div>
                 <button class="btn btn-lg btn-danger" id="form-toggle">New Note</button>

@@ -6,9 +6,12 @@ const formContainer = document.querySelector('.card-container')
 
 const noteCard = document.getElementById('note-card')
 const cardText = document.querySelector('.card-text')
+const created = document.querySelector('#card-date')
 const toggleButton = document.querySelector('#form-toggle')
+const alert = document.querySelector('.alert')
 
 formContainer.style.display = 'none'
+alert.style.display = 'none'
 
 showLatestNote()
 
@@ -26,6 +29,10 @@ form.addEventListener('submit', (e) => {
     content
   }
 
+  // FIX!!: Need to get an alert running for if the content is empty!
+  // It will throw a 422 error in console, but need to handle it on
+  // client as well
+
   fetch(API_URL, {
       method: 'POST',
       body: JSON.stringify(note),
@@ -34,11 +41,14 @@ form.addEventListener('submit', (e) => {
       }
     }).then(res => res.json())
     .then(createdNote => {
-      formContainer.style.display = 'none'
-      noteCard.style.display = ''
-      toggleButton.style.display = ''
-      console.log(createdNote)
-      showLatestNote()
+      if (createdNote) {
+        formContainer.style.display = 'none'
+        noteCard.style.display = ''
+        toggleButton.style.display = ''
+        showLatestNote()
+      } else {
+        alert.style.display = ''
+      }
     })
 
 })
@@ -49,6 +59,9 @@ function showLatestNote() {
     .then(notes => {
       let latestNote = notes.reverse().shift()
       cardText.textContent = latestNote.content
+      let date = latestNote.created
+      date.toLocaleString()
+      created.textContent = date
     })
 }
 
