@@ -1,10 +1,11 @@
 const express = require('express')
 const cors = require('cors')
 const monk = require('monk')
+require('dotenv').config
 
 const app = express()
 
-const db = monk('localhost/notesdb')
+const db = monk(process.env.MONGO_URI || 'localhost/notesdb')
 const notes = db.get('notes')
 
 app.use(cors())

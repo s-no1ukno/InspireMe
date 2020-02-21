@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/notes'
+const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:5000/notes' : 'https://server-tan.now.sh/notes'
 
 // document selectors
 const form = document.querySelector('form')
@@ -42,6 +42,7 @@ form.addEventListener('submit', (e) => {
     }).then(res => res.json())
     .then(createdNote => {
       if (createdNote) {
+        form.reset()
         formContainer.style.display = 'none'
         noteCard.style.display = ''
         toggleButton.style.display = ''
